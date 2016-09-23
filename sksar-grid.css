@@ -1,0 +1,93 @@
+/*
+	SKSAR GRID Javscipt library by Soumya Kanti Sar | sksar.in
+
+	A simple css responsive grid system created by me. 
+    Website: https://sksar.github.io/sksar-grid/
+
+    Note: This is the CSS file to be used with sksar-grid.js 
+
+    License:        CC Attribution-NoDerivatives 4.0 International 
+    License URL:    https://creativecommons.org/licenses/by-nd/4.0/
+*/
+
+
+    /* 
+        Box Model (important for our grid) 
+        remove this if already using this in main stylesheet 
+    */
+
+    *, *:after, *:before {
+        -webkit-box-sizing: border-box !important;
+        -moz-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+    }
+
+
+
+    .col{
+        width: 100%;
+        float: none !important;
+        display: table;
+        padding: 0px 0px 0px 0px !important;
+        margin: 0px 0px 0px 0px !important;
+    }
+
+    /* 
+        NOTE: Default right padding of 7px added, 
+        it is advised not to use your own value depending upon your theme
+     */
+        
+    [class*='col-'] {
+        float: left;
+        min-height: 1px;
+        padding: 10px 7px;
+    }
+        
+    /* 
+        Columns 1 to 11
+        (12th one is not required) 
+    */
+        
+    .col-1{
+        width: 8.33%;
+    }
+
+    .col-2{
+        width: 16.66%;
+    }
+    
+    .col-3{
+        width: 25%
+    }
+
+    .col-4{
+        width: 33.33%;
+    }
+
+    .col-5{
+        width: 41.66%;
+    }
+
+    .col-6{
+        width: 50%;
+    }
+
+    .col-7{
+        width: 58.33%;
+    }
+
+    .col-8{
+        width: 66.66%;
+    }
+
+    .col-9{
+        width: 75%;
+    }
+
+    .col-10{
+        width: 83.33%;
+    }
+
+    .col-11{
+        width: 91.66%;
+    }
