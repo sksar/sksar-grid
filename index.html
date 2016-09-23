@@ -1,0 +1,309 @@
+<!--
+
+	SKSAR GRID Javscipt library by Soumya Kanti Sar | sksar.in
+
+	A simple css responsive grid system created by me.
+    Website: https://sksar.github.io/sksar-grid/
+
+    Note: This is the demo html file
+
+    License:        CC Attribution-NoDerivatives 4.0 International 
+    License URL:    https://creativecommons.org/licenses/by-nd/4.0/
+
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>SKSAR-GRID.JS | BY SOUMYA KANTI SAR</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="A super simple responsive grid system" />
+        <meta name="keywords" content="sksar-grid,sksar-grid.js,sksar-grid.css, js, css, responsive, grid, system, Soumya Kanti Sar" />
+        
+        <!-- Import sksar-grid.css (REQUIRED) -->
+        <link rel="stylesheet" href="sksar-grid.css">
+        
+        <!-- Custom style (represnting html's main style sheet) -->
+        <style>
+            @import url(https://db.onlinewebfonts.com/c/8cdc51d9ff931c3ad1afa824dbf94e9b?family=BrandonGrotW01-Regular);
+            body {background: #f5f5f5;color: #6b7381;font-size: 100%;line-height: 1.5em;font-family: "BrandonGrotW01-Regular";}
+            h1{margin: 0; letter-spacing: 1.5px; font-weight: 700;font-size: 3em;}
+            .banner{margin: auto;background: #6b7381;min-width:300px;max-width:65%;border-radius:7px;color:#f4f4f4;padding:27px 30px;}
+            @media only screen and (max-width: 780px){h1{font-size: 2.2em;padding:0px;} span.special{padding:7px;}}
+            @media only screen and (max-width: 600px){h1{font-size: 1.7em;} span.special{padding:3px;}}
+            p {padding:0px 20px;font-weight: 400;font-size: 16px;line-height: 22px;}
+            .special{width:100%;display:inline-block;border-left: 4px solid #6b7381;background: rgba(225,225,225,0.5);padding: 20px; }
+            .button {display: inline-block;padding: 5px 10px;border: 2px solid #6b7381;width:100%;background:#d4d4d4;color:#000;}
+            .center{width: 90%;margin: 0 auto;}
+            hr{height:3px; background: #6b7381; border:0!important;}
+            .col{border:1px solid #000;background:#e8e8e8; }
+            .container{max-width:1080px;margin:0 auto;}
+            p.special span.special{background:#f8f8f8;}
+            p span.special{background:#eee;outline:1px dashed #000;padding: 12px;}
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+        <br><br><br><br>
+        <div class="center" style="text-align:center;">
+            <div class="banner"><h1>SKSAR-GRID.JS</h1></div>
+            <br><br>
+                A Super Simple Lightweight Responsive Grid System,
+                which works both using css and javascript..
+            <br><br><br><br><br>
+            <b>Zoom in-out the page from your browser to see it in action..</b>
+        </div>
+        
+        <br><hr width="91%"><br>
+        
+        <div class="center">
+            <br><br><br>
+            <h2>What is SKSAR-GRID ?</h2>
+            <br>
+            <p class="special">
+                SKSAR-GRID is a simple responsive grid system for modern web design. It is different from other Grid Systems, as it does not use fixed CSS media queries, but creates them automatically as and when needed.
+                <br><br>
+                The very core of the grid contains a simple 12-column layout css grid, <b>(sksar-grid.css)</b> with no media query breaks. Then upon it styles are added dynamically using javascript <b>(sksar-grid.js)</b>..
+            </p>
+            <br><br>
+            <h3>Installation</h3>
+            <br>
+            <p class="special">
+                First import the <b>"sksar-grid.css"</b> file into the head section of your html page,<br>
+                Secondly import the <b>"sksar-grid.js"</b> file at the end of the page,<br>
+                <b>Thats it..</b>
+            </p>
+            <br><br>
+            <h3>Usage</h3>
+            <br>
+            <p class="special">
+                Now you can enjoy creating grids using the following syntax,
+                <br><br>
+                <span class="special"><b>&lt;div class="col col-{min_value}-{max_value}"&gt;</b> {columns} <b>&lt;/div&gt;</b></span>
+                <br><br>
+                Where <b>{min_value}</b> is the minimum browser width (in px), smaller than which the grid breaks,<br> and <b>{max_value}</b> is the maximum browser width (in px), greater than which the grid breaks again..
+            </p>
+            <br>
+            <p class="special">
+                <b>Note:</b> The <b>col-XXX-XXX</b> is the class name javascript is looking for; 
+                When it finds such a class, it creates the appropriate css <b>"@media"</b> rules at the end of the page..
+                <br><br>
+                <span class="special"><b>Example:</b> col-480-1900, col-600-800, col-600-0, col-320-800</span>
+                <br><br>
+                <b>Note: To skip a value set it to zero, but remember that {min_value} should be less that {max_value}, but not in the case of zero..</b>
+            </p>
+            <br><br><br><br>
+        </div>
+        
+        <br><hr width="91%"><br>
+        
+        <div class="center">
+            <br><br>
+            <!-- NOTE: CUSTOM BORDED ADDED TO GRID TO SHOW WHAT'S HAPPENING -->
+            <h2>EXAMPLES</h2>
+            <br>
+            
+            <!-- EXAMPLE 1 -->
+            <p><b>1) Breaks when browser's width is less than 480px and greater than 1900px..</b></p>
+            <p><span class="special"><b>&lt;div class="col col-480-1900"&gt;</b> {columns} <b>&lt;/div&gt;</b></span></p><br>
+            
+            
+            <!-- Grid containing two columns, a 4-unit one and a 8-unit one, range: 480px to 1900px -->
+            <div class="col col-480-1900">
+                <!-- First column -->
+                <div class="col-4">
+                    <div class="button">Column of 4 units</div>
+                </div>
+                <!-- Second column -->
+                <div class="col-8">
+                    <div class="button">Column of 8 units</div>
+                </div>
+            </div>
+            
+            
+            
+            <br><br>
+            
+            <!-- EXAMPLE 2 -->
+            <p><b>2) Breaks when browser's width is less than 800px and greater than 1500px..</b></p>
+            <p><span class="special"><b>&lt;div class="col col-800-1500"&gt;</b> {columns} <b>&lt;/div&gt;</b></span></p><br>
+            
+            
+            <!-- Grid containing three 4-unit colums, range: 800px to 1500px -->
+            <div class="col col-800-1500">
+                <!-- First column -->
+                <div class="col-4">
+                    <div class="button">Column of 4 units</div>
+                </div>
+                <!-- Second column -->
+                <div class="col-4">
+                    <div class="button">Column of 4 units</div>
+                </div>
+                <!-- Third column -->
+                <div class="col-4">
+                    <div class="button">Column of 4 units</div>
+                </div>
+            </div>
+            
+            
+            
+            <br><br>
+            
+            <!-- EXAMPLE 3 -->
+            <p><b>3) Breaks when browser's width is only less than 800px, no maximum value given so it's set to zero..</b></p>
+            <p><span class="special"><b>&lt;div class="col col-800-0"&gt;</b> {columns} <b>&lt;/div&gt;</b></span></p><br>
+            
+            
+            
+            <!-- Grid containing two 6-unit colums, range: 800px to (infinity)px -->
+            <div class="col col-800-0">
+                <!-- First column -->
+                <div class="col-6">
+                    <div class="button">Column of 6 units</div>
+                </div>
+                <!-- Second column -->
+                <div class="col-6">
+                    <div class="button">Column of 6 units</div>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        
+        <br><br><br><br><br><br><hr width="91%"><br><br>
+        
+        <div class="center">
+            <br><br>
+            <h2>12 - COLUMN LAYOUT</h2>
+            <p>Much like other Responsive Grid Systems, sksar-grid also has a 12 column layout,<br>With classes starting from <b>".col-1"</b> to <b>".col-12"</b></p>
+            <br><br><br><br>
+            
+            
+            
+            <!-- Columns demo -->
+            <div class="col col-600-0">
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-11"><div class="button">.col-11</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-10"><div class="button">.col-10</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-3"><div class="button">.col-3</div></div>
+                <div class="col-9"><div class="button">.col-9</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-4"><div class="button">.col-4</div></div>
+                <div class="col-8"><div class="button">.col-8</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-5"><div class="button">.col-5</div></div>
+                <div class="col-7"><div class="button">.col-7</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-6"><div class="button">.col-6</div></div>
+                <div class="col-6"><div class="button">.col-6</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-7"><div class="button">.col-7</div></div>
+                <div class="col-5"><div class="button">.col-5</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-8"><div class="button">.col-8</div></div>
+                <div class="col-4"><div class="button">.col-4</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-9"><div class="button">.col-9</div></div>
+                <div class="col-3"><div class="button">.col-3</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-10"><div class="button">.col-10</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-11"><div class="button">.col-11</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+            </div>
+            
+            <!-- More layouts -->
+            <br><br><br><br>
+            
+            <div class="col col-600-0">
+                <div class="col-6"><div class="button">.col-6</div></div>
+                <div class="col-6"><div class="button">.col-6</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-4"><div class="button">.col-4</div></div>
+                <div class="col-4"><div class="button">.col-4</div></div>
+                <div class="col-4"><div class="button">.col-4</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-3"><div class="button">.col-3</div></div>
+                <div class="col-3"><div class="button">.col-3</div></div>
+                <div class="col-3"><div class="button">.col-3</div></div>
+                <div class="col-3"><div class="button">.col-3</div></div>
+            </div>
+            <br>
+            <div class="col col-600-0">
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+                <div class="col-2"><div class="button">.col-2</div></div>
+            </div>
+            <br>
+            <div class="col col-480-0">
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+                <div class="col-1"><div class="button">1</div></div>
+            </div>
+            <br><br><br><br>
+        </div>
+        
+        <br><br><br><hr width="91%"><br><br><br>
+    
+        <div class="center">    
+            <h3>View documentation on <a href="https://github.com/sksar/sksar-grid">Github</a></h3>
+            <p><b>sksar-grid</b> is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International <b>(CC BY-ND 4.0)</b> License</p>
+            <br><br>
+            <p><b>Made by Soumya Kanti Sar</b></p>
+            <br><br>
+        </div>
+        
+    </div>
+        
+        
+        <!-- Import sksar-grid.js (REQUIRED) -->
+        <script type="text/javascript" src="sksar-grid.min.js"></script>
+        
+        
+        
+    </body>
+</html>
