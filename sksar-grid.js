@@ -1,7 +1,7 @@
 /*
-	SKSAR GRID Javscipt library by Soumya Kanti Sar | sksar.in
+    SKSAR GRID Javscipt library by Soumya Kanti Sar | sksar.in
     
-	A simple css responsive grid system created by me.
+    A simple css responsive grid system created by me.
     Website: https://sksar.github.io/sksar-grid/
     
     Note: Make sure the stylesheet sksar-grid.css is imported first
