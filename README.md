@@ -2,14 +2,14 @@
 A Super Simple Lightweight Responsive Grid System created by me,  
 (Only 768 bytes minified, and 3 KB source code)
 
-###What is SKSAR-GRID ?
+What is SKSAR-GRID ?
 ---
 
 SKSAR-GRID is a simple responsive grid system for modern web design. It is different from other Grid Systems, as it does not use fixed CSS media queries, but creates them automatically as and when needed.  
   
 The very core of the grid contains a simple 12-column layout css grid, (sksar-grid.css) with no media query breaks. Then upon it styles are added dynamically using javascript (sksar-grid.js)..  
 
-###Installation
+Installation
 ---
 Import **sksar-grid.css** in the `<head>` section of your html file..
 
@@ -44,7 +44,7 @@ that is, it will never break on any resoultion width greater than the **min_valu
 The value of **min_value** should be lower than the **max_value**  
   
 
-###Columns
+Columns
 ---
 Just like other responsive grid systems, **sksar-grid** also contains a **12 column layout**  
 with colummn class starting from `.col-1` to `.col-12`  
@@ -58,7 +58,7 @@ with colummn class starting from `.col-1` to `.col-12`
 
 **Make sure the column unit values add up to 12 in any column container..**  
 
-###Dynamic Grids
+Dynamic Grids
 ---
 If you create grids **dynamically** using code, then they will not **behave properly**,  
 You have two approaches then,  
@@ -69,7 +69,7 @@ You have two approaches then,
 **2)** Or, create the grid with whatever class name you like,  
    and call the `sksarGrid.gridify()` function **to reinintalise all grids on the page**..
 
-###Sample code
+Sample code
 ---
 **Example 1:** A grid that breaks when browser width is less than 480 px, also when its greater than 800px  
 and it contains a **4 unit** and **8 unit** columns respectively, which **adds up to 12** (4+8)
@@ -90,12 +90,12 @@ and it contains three **4 unit** columns respectively, which **adds up to 12** (
 </div>
 ```  
 
-###Note
+Note
 ---
 
 It is advised to copy the entire style rules contained inside the **sksar-grid.css**, to your html's main style sheet,  
 Also it would be better if you use the minified versions of both **sksar-grid.js** and **sksar-grid.css**..
 
-###License
+License
 ---
 **sksar-grid** is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) License](https://creativecommons.org/licenses/by-nd/4.0/)
